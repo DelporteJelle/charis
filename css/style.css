@@ -12,44 +12,77 @@ header {
   padding-top: 30px;
   padding-bottom: 50px;
 }
+
 header .grid-container {
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: 280px auto auto;
+  -ms-grid-columns: 280px auto auto;
+      grid-template-columns: 280px auto auto;
   max-width: 1100px;
   margin: 0 auto 0 auto;
 }
+
 header img {
   max-height: 110px;
-  grid-area: 1/1/span 2/span 1;
-  justify-self: right;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-area: 1 / 1 / span 2 / span 1;
+  -ms-grid-column-align: right;
+      justify-self: right;
   margin-right: 30px;
 }
+
 header .contact {
-  grid-area: 1/2/span 1/span 2;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: 1 / 2 / span 1 / span 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   justify-self: right;
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   color: #f7f7f7;
   text-align: end;
 }
+
 header .contact .number {
   margin: 0px !important;
   font-size: 20px;
 }
+
 header .contact .address {
   margin: 0px !important;
 }
+
 header .navbar {
-  grid-area: 2/2/span 1/span 2;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: 2 / 2 / span 1 / span 2;
   background-color: #616864;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  align-items: center;
-  align-self: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
+
 header .navbar a {
   color: #f7f7f7;
   text-decoration: none;
@@ -59,54 +92,121 @@ header .navbar a {
 
 main {
   background-color: #EAF0D4;
+  height: 1000px;
 }
+
 main .welkom {
   background-color: #bd9da9;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   max-width: 1100px;
   margin: 0 auto 0 auto;
 }
+
 main .welkom .welkomstekst {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin: 40px;
 }
+
 main .welkom .welkomstekst p {
   color: #f7f7f7;
   font-size: 20px;
 }
+
 main .welkom img {
   max-width: 650px;
   max-height: 400px;
 }
+
 main .grid-container {
   max-width: 1100px;
+  display: -ms-grid;
   display: grid;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 20px auto 0 auto;
   gap: 20px;
 }
+
 main .grid-container .item {
   background-color: #d7c7ca;
   width: 260px;
   height: 260px;
 }
-main .grid-container .foto {
-  display: flex;
+
+main .grid-container .itemwaarom {
+  background-color: #d7c7ca;
+  width: 260px;
+  height: 260px;
+}
+
+main .grid-container .itemwaarom .waarom {
+  border: white 2px solid;
   margin: 10px;
+  padding: 5px;
+  width: 228px;
+  height: 228px;
+}
+
+main .grid-container .itemwaarom .waarom .header {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+main .grid-container .itemwaarom .waarom ul {
+  margin: 0;
+  padding: 0;
+}
+
+main .grid-container .itemwaarom .waarom ul li {
+  list-style: none;
+  background-image: url("../images/charis_logo_vogeltje_wit.png");
+  background-size: 20px;
+  background-position: left center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0 0 0 20px;
+}
+
+main .grid-container .itemwaarom .waarom p {
+  padding: 5px;
+  margin: 0px;
+  color: white;
+}
+
+main .grid-container .foto {
+  margin: 10px;
+}
+
+main .grid-container .foto img {
   max-width: 240px;
   max-height: 240px;
 }
+
 main .grid-container .actie .actieheader {
   height: 50px;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
+
 main .grid-container .actie .actieheader img {
   margin-left: 15px;
-  align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   height: 30px;
 }
+
 main .grid-container .actie .actieheader p {
   margin: auto 20px auto;
   color: #f7f7f7;
@@ -115,23 +215,30 @@ main .grid-container .actie .actieheader p {
   font-family: sans-serif;
   font-weight: 600;
 }
+
 main .grid-container .actie .actiebody {
   background-color: #f2e3e4;
   height: 210px;
 }
+
 main .grid-container .actie .actiebody p {
   margin: 0px !important;
   text-align: center;
   font-size: 26px;
   padding: 10px;
 }
+
 @media (min-width: 550px) {
   main .grid-container {
-    grid-template-columns: repeat(2, 260px);
+    -ms-grid-columns: (260px)[2];
+        grid-template-columns: repeat(2, 260px);
   }
 }
+
 @media (min-width: 1100px) {
   main .grid-container {
-    grid-template-columns: repeat(4, 260px);
+    -ms-grid-columns: (260px)[4];
+        grid-template-columns: repeat(4, 260px);
   }
-}/*# sourceMappingURL=style.css.map */
+}
+/*# sourceMappingURL=style.css.map */
