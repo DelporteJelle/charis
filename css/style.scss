@@ -1,5 +1,9 @@
+$background-header: #a9c39c;
+$background-main: #EAF0D4;
+
 body {
   margin: 0;
+  // background-color: $background-main;
 }
 p{
   font-family: sans-serif;
@@ -7,9 +11,9 @@ p{
 }
 //===============================Header============================================
 header {
-  background-color: #a9c39c;
+  background-color: $background-header;
   padding-top: 30px;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
 
   .grid-container{
     display: grid;
@@ -62,20 +66,27 @@ header {
 //===============================Main============================================
 
 main{
-  background-color: #EAF0D4;
   height: 1000px;
-
+  background: linear-gradient(
+    to top,
+    $background-main 0%,
+    $background-main 97%,
+    $background-header 97%,
+    $background-header 100%,
+  );
 //===============Eerste blok===================
 
   .welkom{
     background-color: #bd9da9;
     display: flex;
-    max-width: 1100px;
+    flex-direction: column;
+    max-width: 640px;
     margin: 0 auto 0 auto;
 
     .welkomstekst{
       display: flex;
       margin: 40px;
+      min-width: 350px;
 
       p{
         color: #f7f7f7;
@@ -181,16 +192,19 @@ main{
     }
 
   }
-
-  @media (min-width: 550px){
-    .grid-container{
-      grid-template-columns: repeat(2, 260px);
-    }
-  }
-  @media (min-width: 1100px){
-    .grid-container{
-      grid-template-columns: repeat(4, 260px);
-    }
-  }
 }
 
+@media (min-width: 550px){
+  .grid-container{
+    grid-template-columns: repeat(2, 260px);
+  }
+}
+@media (min-width: 1100px){
+  .welkom{
+    flex-direction: row !important;
+    max-width: 1100px !important;
+  }
+  .grid-container{
+    grid-template-columns: repeat(4, 260px);
+  }
+}
